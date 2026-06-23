@@ -1,11 +1,11 @@
- const wait = () => new Promise(resolve => setTimeout(resolve, 0))
+const wait = () => new Promise(resolve => setTimeout(resolve, 0))
 
 
-function generateRandomNumber(){
+function generateRandomNumber() {
     const randomNumber = Math.floor((Math.random() * 100) + 1);
 
     return randomNumber
-}  
+}
 
 
 // let generatedNumber = generateRandomNumber;
@@ -40,45 +40,45 @@ function getPlayerGuess() {
     // console.log("test");
     // console.log(generatedNumber);
 
-    while(true){
-    let playerGuess = prompt("Guess a random number between 1 and 100");
+    while (true) {
+        let playerGuess = prompt("Guess a random number between 1 and 100");
 
-   // checkGuess(generatedNumber, playerGuess);
+        // checkGuess(generatedNumber, playerGuess);
 
-    // else if  (/^\d+$/.test(playerGuess.trim())) {
-    //     console.log("Enter valid character");
-    // }
-    if(playerGuess === null || playerGuess.trim() === ""){
-        console.log("Write something!!!!");
-        continue;
-    } 
-    const number = parseInt(playerGuess,10);
-    if(isNaN(number) || playerGuess.trim() !== number.toString()) {
-        console.log("Please enter a valid integer.");
-        continue;
-     } 
-     else{
-        console.log(number);
-        return number;
-     }
+        // else if  (/^\d+$/.test(playerGuess.trim())) {
+        //     console.log("Enter valid character");
+        // }
+        if (playerGuess === null || playerGuess.trim() === "") {
+            console.log("Write something!!!!");
+            continue;
+        }
+        const number = parseInt(playerGuess, 10);
+        if (isNaN(number) || playerGuess.trim() !== number.toString()) {
+            console.log("Please enter a valid integer.");
+            continue;
+        }
+        else {
+            console.log(number);
+            return number;
+        }
 
-//     else if (number > 100 || number < 1){
-//         console.log("Choose a number between 1 and 100 not higher or lower");
-//     }
-//     else if (number > generatedNumber) {
-//         console.log("If i were you, i would go even lower down to zero, at least you'd find something in common!!!");
-//    }else if (number < generatedNumber) {
-//         console.log("Pfff! Not even close... But if it pleases you go higher, it's the only way you'll get higher somewhere, in your miserable life...");
-//     } else if(number === generatedNumber) {
-//         console.log("...So, You hit the nail on the head?!! Wow! huh... I mean... BIG DEAL!!!");
-//         break;
-//     }
+        //     else if (number > 100 || number < 1){
+        //         console.log("Choose a number between 1 and 100 not higher or lower");
+        //     }
+        //     else if (number > generatedNumber) {
+        //         console.log("If i were you, i would go even lower down to zero, at least you'd find something in common!!!");
+        //    }else if (number < generatedNumber) {
+        //         console.log("Pfff! Not even close... But if it pleases you go higher, it's the only way you'll get higher somewhere, in your miserable life...");
+        //     } else if(number === generatedNumber) {
+        //         console.log("...So, You hit the nail on the head?!! Wow! huh... I mean... BIG DEAL!!!");
+        //         break;
+        //     }
 
+    }
 }
-}
-function checkGuess(playerGuess, randomNumber){
+function checkGuess(playerGuess, randomNumber) {
 
-    if(playerGuess > randomNumber){
+    if (playerGuess > randomNumber) {
         console.log("If i were you, i would go even lower down to zero, at least you'd find something in common!!!");
     } else if (playerGuess < randomNumber) {
         console.log("Pfff! Not even close... But if it pleases you go higher, it's the only way you'll get higher somewhere, in your miserable life...");
@@ -88,23 +88,31 @@ function checkGuess(playerGuess, randomNumber){
 }
 
 
- 
+
 async function game() {
- 
-   const randomNumber = generateRandomNumber()
-   const wait = () => new Promise(resolve => setTimeout(resolve, 0))
-   console.log("random", randomNumber)
-   for( i=0 ; i<10; i++){
-    await wait()
-    console.log(`Round : ${i + 1}`)
-//    const playerGuess = getPlayerGuess();
-    const playerChoice = getPlayerGuess()
-    checkGuess(playerChoice, randomNumber)
-    if(playerChoice === randomNumber){
-        break;
+    //score system
+    let score = 100;
+
+
+
+    const randomNumber = generateRandomNumber()
+    const wait = () => new Promise(resolve => setTimeout(resolve, 0))
+    console.log("random", randomNumber)
+    for (i = 0; i < 10; i++) {
+        await wait()
+        console.log(`Round : ${i + 1}`)
+        //    const playerGuess = getPlayerGuess();
+        const playerChoice = getPlayerGuess()
+        checkGuess(playerChoice, randomNumber)
+        if (playerChoice === randomNumber) {
+            console.log("...Humpf! It's just luck...");
+            break;
+        } else {
+            score = score - 10;         
+            console.log(`current score${score}`);
+        }
     }
-}
-// console.log(randomNumber)
+    // console.log(randomNumber)
 }
 
 game()

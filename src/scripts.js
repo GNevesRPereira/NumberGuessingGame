@@ -9,7 +9,7 @@ let getPlayerGuess;
 function getValidGuess() {
 
     while (true) {
-        getPlayerGuess = Number(prompt("Wanna bet, you can't guess the intinger number between 1 and 100 i'm thinking about?.", ""));
+        getPlayerGuess = Number(prompt("Wanna bet, you can't guess the integer number between 1 and 100 i'm thinking about?.", ""));
 
         if (Number.isInteger(getPlayerGuess)) {
             return getPlayerGuess;

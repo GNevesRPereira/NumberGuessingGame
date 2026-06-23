@@ -14,7 +14,7 @@ function getValidGuess() {
         if (Number.isInteger(getPlayerGuess)) {
             return getPlayerGuess;
         } else {
-            alert("...Do you even know, what in tarnation is an integer?!!");
+            console.log("...Do you even know, what in tarnation is an integer?!!");
         }
     }
 }
@@ -22,11 +22,11 @@ function getValidGuess() {
 function checkGuess(generatedNumber, getPlayerGuess) {
 
     if (getPlayerGuess < generateRandomNumber) {
-        alert("If i were you, i would go even lower down to zero, at least you'd find something in common!!!");
+        console.log("If i were you, i would go even lower down to zero, at least you'd find something in common!!!");
     } else if (getPlayerGuess > generateRandomNumber) {
-        alert("Pfff! Not even close... But if it pleases you go higher, it's the only way you'll get higher somewhere, in your miserable life...");
+        console.log("Pfff! Not even close... But if it pleases you go higher, it's the only way you'll get higher somewhere, in your miserable life...");
     } else {
-        alert("...So, You hit the nail on the head?!! Wow! huh... I mean... BIG DEAL!!!");
+        console.log("...So, You hit the nail on the head?!! Wow! huh... I mean... BIG DEAL!!!");
     }
 }
 

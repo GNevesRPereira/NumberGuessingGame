@@ -8,18 +8,19 @@ function getValidGuess() {
 
     while (true) {
         let playerInput = prompt(
-            "You can't guess the integer number between 1 and 100 i'm thinking about!"," "
+            "You can't guess the integer number between 1 and 100 i'm thinking about!", " "
         );
 
         if (playerInput === null) {
-            console.log("...Do you even know, what in tarnation is an integer?!!");
             return null;
         }
         if (/^\d+$/.test(playerInput.trim())) {
             let playerGuess = parseInt(playerInput, 10);
 
-            if (playerGuess >=1 && playerGuess <=100){
+            if (playerGuess >= 1 && playerGuess <= 100) {
                 return playerGuess;
+            }else{
+                console.log("...Do you even know, what in tarnation is an integer?!!");
             }
         }
     }

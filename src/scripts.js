@@ -1,8 +1,14 @@
-let generateRandomNumber = Math.floor((Math.random() * 100) + 1);
-let generatedNumber = generateRandomNumber;
+
+function generateRandomNumber(){
+    const randomNumber = Math.floor((Math.random() * 100) + 1);
+
+    return randomNumber
+}  
+
+// let generatedNumber = generateRandomNumber;
 
 //For testing purposes only
-console.log("Generated Number:", generatedNumber);
+// console.log("Generated Number:", generatedNumber);
 
 function getValidGuess() {
 
@@ -28,9 +34,9 @@ function getValidGuess() {
 
 function checkGuess(generatedNumber, playerGuess) {
 
-    if (playerGuess < generateRandomNumber) {
+    if (playerGuess < generatedNumber) {
         console.log("If i were you, i would go even lower down to zero, at least you'd find something in common!!!");
-    } else if (playerGuess > generateRandomNumber) {
+    } else if (playerGuess > generatedNumber) {
         console.log("Pfff! Not even close... But if it pleases you go higher, it's the only way you'll get higher somewhere, in your miserable life...");
     } else {
         console.log("...So, You hit the nail on the head?!! Wow! huh... I mean... BIG DEAL!!!");
@@ -38,8 +44,13 @@ function checkGuess(generatedNumber, playerGuess) {
 }
 
 function game() {
-
+    const generatedNumber = generateRandomNumber()
     let playerGuess = getValidGuess();
+
     checkGuess(generatedNumber, playerGuess);
+    //only for degug
+    console.log(generatedNumber)
 
 }
+
+game()

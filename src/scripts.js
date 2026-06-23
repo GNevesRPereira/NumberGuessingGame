@@ -105,6 +105,7 @@ async function game() {
         const playerChoice = getPlayerGuess()
         checkGuess(playerChoice, randomNumber)
         if (playerChoice === randomNumber) {
+            console.log(`final score${score}`);
             console.log("...Humpf! It's just luck...");
             break;
         } else {

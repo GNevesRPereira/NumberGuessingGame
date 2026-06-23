@@ -1,9 +1,12 @@
+ const wait = () => new Promise(resolve => setTimeout(resolve, 0))
+
 
 function generateRandomNumber(){
     const randomNumber = Math.floor((Math.random() * 100) + 1);
 
     return randomNumber
 }  
+
 
 // let generatedNumber = generateRandomNumber;
 
@@ -32,7 +35,7 @@ function generateRandomNumber(){
 //     }
 // }
 
-async function getPlayerGuess() {
+function getPlayerGuess() {
     // const generatedNumber = generateRandomNumber();
     // console.log("test");
     // console.log(generatedNumber);
@@ -40,7 +43,7 @@ async function getPlayerGuess() {
     while(true){
     let playerGuess = prompt("Guess a random number between 1 and 100");
 
-       await wait()    // checkGuess(generatedNumber, playerGuess);
+   // checkGuess(generatedNumber, playerGuess);
 
     // else if  (/^\d+$/.test(playerGuess.trim())) {
     //     console.log("Enter valid character");
@@ -73,18 +76,32 @@ async function getPlayerGuess() {
 
 }
 }
+function checkGuess(playerGuess, randomNumber){
+
+    if(playerGuess > randomNumber){
+        console.log("If i were you, i would go even lower down to zero, at least you'd find something in common!!!");
+    } else if (playerGuess < randomNumber) {
+        console.log("Pfff! Not even close... But if it pleases you go higher, it's the only way you'll get higher somewhere, in your miserable life...");
+    } else {
+        console.log("...So, You hit the nail on the head?!! Wow! huh... I mean... BIG DEAL!!!");
+    }
+}
 
 
- const wait = () => new Promise(resolve => setTimeout(resolve, 0))
  
-async function game() {
-   
-    // const generatedNumber = generateRandomNumber()
-    // let playerGuess = getValidGuess();
-    //only for degug
-   getPlayerGuess();
-    // console.log(generatedNumber)
+function game() {
+ 
+   const randomNumber = generateRandomNumber()
 
+   console.log("random", randomNumber)
+for( i=0 ; i<10; i++){
+    console.log(`Round : ${i + 1}`)
+//    const playerGuess = getPlayerGuess();
+    const playerChoice = getPlayerGuess()
+    checkGuess(playerChoice, randomNumber)
+    
+}
+// console.log(randomNumber)
 }
 
 game()

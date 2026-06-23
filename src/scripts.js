@@ -30,7 +30,10 @@ function checkGuess(generatedNumber, getPlayerGuess) {
     }
 }
 
+
+//function  game(){
 for (let guessChances = 0; guessChances < 10; guessChances++) {
     getValidGuess();
     checkGuess(generatedNumber, getPlayerGuess);
 }
+//}

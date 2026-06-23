@@ -19,7 +19,7 @@ function getValidGuess() {
 
             if (playerGuess >= 1 && playerGuess <= 100) {
                 return playerGuess;
-            }else{
+            } else {
                 console.log("...Do you even know, what in tarnation is an integer?!!");
             }
         }
@@ -37,10 +37,9 @@ function checkGuess(generatedNumber, playerGuess) {
     }
 }
 
+function game() {
 
-//function  game(){
-for (let guessChances = 0; guessChances < 10; guessChances++) {
     let playerGuess = getValidGuess();
     checkGuess(generatedNumber, playerGuess);
+
 }
-//}

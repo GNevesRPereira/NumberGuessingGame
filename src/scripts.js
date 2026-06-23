@@ -89,17 +89,20 @@ function checkGuess(playerGuess, randomNumber){
 
 
  
-function game() {
+async function game() {
  
    const randomNumber = generateRandomNumber()
-
+   const wait = () => new Promise(resolve => setTimeout(resolve, 0))
    console.log("random", randomNumber)
-for( i=0 ; i<10; i++){
+   for( i=0 ; i<10; i++){
+    await wait()
     console.log(`Round : ${i + 1}`)
 //    const playerGuess = getPlayerGuess();
     const playerChoice = getPlayerGuess()
     checkGuess(playerChoice, randomNumber)
-    
+    if(playerChoice === randomNumber){
+        break;
+    }
 }
 // console.log(randomNumber)
 }

@@ -32,10 +32,10 @@ function getPlayerGuess() {
 }
 function checkGuess(playerGuess, randomNumber) {
 
-    if (playerGuess > randomNumber) {
-        return "If i were you, i would go even lower down to zero, at least you'd find something in common!!!"
+    if (playerGuess > randomNumber) { 
+        return "Not even close... But if it pleases you go higher, it's the only way you'll get higher somewhere, in your miserable life..."
     } else if (playerGuess < randomNumber) {
-       return "Pfff! Not even close... But if it pleases you go higher, it's the only way you'll get higher somewhere, in your miserable life..."
+       return "If i were you, i would go even lower down to zero, at least you'd find something in common!!!"
     } else {
         return "...So, You hit the nail on the head?!! Wow! huh... I mean... BIG DEAL!!!"
     }
@@ -62,7 +62,7 @@ async function game() {
         if (playerChoice === randomNumber) {
             console.log(`Final score: ${score}`);
             console.log(`Attempts : ${i + 1}`)
-            console.log("...Humpf! It's just luck...\n\n"+"refresh the page to start a new game");
+            console.log("...Huh, You... Won?!! INCONCEIVABLE!!! ...Go ahead rejoice... Pat youself on the back, while you're at it...Humpf! It's just luck anyway...\n\n"+"refresh the page to start a new game");
 
             hasWon = true
             break;
@@ -73,7 +73,7 @@ async function game() {
     }
     if(!hasWon){
         console.log(`Attempts: ${maxAttempts}`);
-        console.log("YOU DIED --Dark Souls sounds on the background--\n\n"+"refresh the page to start a new game")
+        console.log("Oh no! The human lost...Awwww... Psyke! Said no one ever!!! Tell me, how does it feel to be a loser? No different, than how you feel 24/7, right? RIGHT?!!\n\n"+"refresh the page to start a new game")
     }
 }
 

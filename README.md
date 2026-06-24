@@ -1,1 +1,1 @@
-Insert deployed link in HERE
+https://gnevesrpereira.github.io/NumberGuessingGame/

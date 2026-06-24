@@ -113,7 +113,7 @@ async function game() {
         }
     }
     if (score > 50) {
-        console.log("...Huh, You... Won?!! INCONCEIVABLE!!! ...Go ahead rejoice... Pat youself on the back, while you're at it...Humpf! It's just luck...");
+        console.log("...Huh, You... Won?!! INCONCEIVABLE!!! ...Go ahead rejoice... Pat youself on the back, while you're at it...Humpf! It's just luck anyway...");
     } else if (score < 50) {
         console.log("Oh no! The human lost...Awwww... Psyke! Said no one ever!!! Tell me, how does it feel to be a loser? No different, than how you feel 24/7, right? RIGHT?!!");
     }

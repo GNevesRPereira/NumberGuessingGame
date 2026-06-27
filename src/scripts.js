@@ -23,10 +23,21 @@ function getPlayerGuess() {
     while (true) {
         let playerGuess = prompt("Guess a random number between 1 and 100");
 
-        if (playerGuess === null || playerGuess.trim() === "") {
+       if (playerGuess === null) {
+        const wantsToQuit = confirm("Are you sure you want to quit the game?");
+
+            if (wantsToQuit) {
+                return null;
+            }
+
+            continue;
+        }
+
+        if (playerGuess.trim() === "") {
             console.log("Write something!!!!");
             continue;
         }
+
         const number = parseInt(playerGuess, 10);
         if (isNaN(number) || playerGuess.trim() !== number.toString()) {
             console.log("Please enter a valid integer.");
@@ -66,7 +77,14 @@ async function game() {
         console.log(`Round : ${i + 1}`)
    
         const playerChoice = getPlayerGuess()
+
+        if (playerChoice === null) {
+            console.log("Game closed. The EVIL AI will wait for your next failure.");
+            return;
+        }
+
         const resultMessage = checkGuess(playerChoice, randomNumber)
+        
         console.log(`Your guess: ${playerChoice}`);
         console.log(resultMessage)
 

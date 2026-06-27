@@ -21,7 +21,9 @@ function showWelcomeMessage() {
 function getPlayerGuess() {
 
     while (true) {
-        let playerGuess = prompt("Guess a random number between 1 and 100");
+        let playerGuess = prompt("Guess a random number between 1 and 100\n\n" +
+            "Or press 'cancel' to quit the game"
+        );
 
        if (playerGuess === null) {
         const wantsToQuit = confirm("Are you sure you want to quit the game?");
@@ -79,7 +81,8 @@ async function game() {
         const playerChoice = getPlayerGuess()
 
         if (playerChoice === null) {
-            console.log("Game closed. The EVIL AI will wait for your next failure.");
+            console.log("Game closed. The EVIL AI will wait for your next failure.\n\n"+
+                "refresh the page to start a new game");
             return;
         }
 

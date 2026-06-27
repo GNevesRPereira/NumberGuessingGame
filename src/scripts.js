@@ -7,6 +7,17 @@ function generateRandomNumber() {
     return randomNumber
 }
 
+function showWelcomeMessage() {
+    alert(
+        "Welcome to the Number Guessing Game!\n\n" +
+        "The EVIL AI has chosen a number between 1 and 100.\n" +
+        "You have 10 attempts to guess it.\n\n" +
+        "Your score starts at 100 and decreases after each wrong guess.\n\n" +
+        "This game is played through prompts, but the results are shown in the console.\n" +
+        "Open the console with F12 or Ctrl + Shift + J, then press OK to start."
+    );
+}
+
 function getPlayerGuess() {
 
     while (true) {
@@ -77,4 +88,5 @@ async function game() {
     }
 }
 
+showWelcomeMessage()
 game()
